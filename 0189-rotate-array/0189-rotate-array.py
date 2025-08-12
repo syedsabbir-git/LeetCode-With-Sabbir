@@ -3,7 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        # step = int(len(nums)/k)
+        if k == 0 :
+            return
+        step = len(nums) / k
+        step_ceil = int(step) if step == int(step) else int(step) + 1
         for i in range(k):
             nums.insert(0, nums[-1])
             nums.pop()
